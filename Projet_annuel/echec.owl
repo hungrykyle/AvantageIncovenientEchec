@@ -1,0 +1,932 @@
+@prefix : <http://www.semanticweb.org/21307264/echec#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <file:/home/etudiants/21307264/Documents/master2/rais/> .
+
+<file:/home/etudiants/21307264/Documents/master2/rais/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+
+###  http://www.semanticweb.org/21307264/snowman#hasEast
+:hasEast rdf:type owl:ObjectProperty ;
+         rdfs:domain :Cell .
+
+
+###  http://www.semanticweb.org/21307264/snowman#hasNorth
+:hasNorth rdf:type owl:ObjectProperty ;
+          rdfs:domain :Cell .
+
+
+###  http://www.semanticweb.org/21307264/snowman#hasSouth
+:hasSouth rdf:type owl:ObjectProperty ;
+          rdfs:domain :Cell .
+
+
+###  http://www.semanticweb.org/21307264/snowman#hasWest
+:hasWest rdf:type owl:ObjectProperty ;
+         rdfs:domain :Cell .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/21307264/snowman#x
+:x rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/21307264/snowman#y
+:y rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+
+###  http://www.semanticweb.org/21307264/snowman#Cell
+:Cell rdf:type owl:Class .
+
+:CellPion rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .
+:CellRoi rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .
+
+:CellReine rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .
+:CellFou rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .
+:CellCavalier rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .
+:CellFou rdf:type owl:Class ;
+          rdfs:subClassOf :Cell . 
+:CellTour rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .  
+:CellPieceB rdf:type owl:Class ;
+          rdfs:subClassOf :Cell . 
+:CellPieceN rdf:type owl:Class ;
+          rdfs:subClassOf :Cell .      
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/21307264/snowman#cell00
+:cell00 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellTour ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell10 ;
+        :hasNorth :wall ;
+        :hasSouth :cell01 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell01
+:cell01 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN
+        :hasEast :cell11 ;
+        :hasNorth :cell00 ;
+        :hasSouth :cell02 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell02
+:cell02 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell12 ;
+        :hasNorth :cell01 ;
+        :hasSouth :cell03 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell03
+:cell03 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell13 ;
+        :hasNorth :cell02 ;
+        :hasSouth :cell04 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell04
+:cell04 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell14 ;
+        :hasNorth :cell03 ;
+        :hasSouth :cell05 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell05
+:cell05 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell15 ;
+        :hasNorth :cell04 ;
+        :hasSouth :cell06 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell06
+:cell06 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell16 ;
+        :hasNorth :cell05 ;
+        :hasSouth :cell07 ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell07
+:cell07 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellTour ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell17 ;
+        :hasNorth :cell06 ;
+        :hasSouth :wall ;
+        :hasWest :wall ;
+        :x "0"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell10
+:cell10 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellCavalier ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN
+        :hasEast :cell20 ;
+        :hasNorth :wall ;
+        :hasSouth :cell11 ;
+        :hasWest :cell00 ;
+        :x "1"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell11
+:cell11 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN
+        :hasEast :cell21 ;
+        :hasNorth :cell10 ;
+        :hasSouth :cell12 ;
+        :hasWest :cell01 ;
+        :x "1"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell12
+:cell12 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell22 ;
+        :hasNorth :cell11 ;
+        :hasSouth :cell13 ;
+        :hasWest :cell02 ;
+        :x "1"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell13
+:cell13 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell23 ;
+        :hasNorth :cell12 ;
+        :hasSouth :cell14 ;
+        :hasWest :cell03 ;
+        :x "1"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell14
+:cell14 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell24 ;
+        :hasNorth :cell13 ;
+        :hasSouth :cell15 ;
+        :hasWest :cell04 ;
+        :x "1"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell15
+:cell15 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell25 ;
+        :hasNorth :cell14 ;
+        :hasSouth :cell16 ;
+        :hasWest :cell05 ;
+        :x "1"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell16
+:cell16 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB
+        :hasEast :cell26 ;
+        :hasNorth :cell15 ;
+        :hasSouth :cell17 ;
+        :hasWest :cell06 ;
+        :x "1"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell17
+:cell17 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellCavalier ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB
+        :hasEast :cell27 ;
+        :hasNorth :cell16 ;
+        :hasSouth :wall ;
+        :hasWest :cell07 ;
+        :x "1"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell20
+:cell20 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellFou ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell30 ;
+        :hasNorth :wall ;
+        :hasSouth :cell21 ;
+        :hasWest :cell10 ;
+        :x "2"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell21
+:cell21 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell31 ;
+        :hasNorth :cell20 ;
+        :hasSouth :cell22 ;
+        :hasWest :cell11 ;
+        :x "2"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell22
+:cell22 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell32 ;
+        :hasNorth :cell21 ;
+        :hasSouth :cell23 ;
+        :hasWest :cell12 ;
+        :x "2"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell23
+:cell23 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell33 ;
+        :hasNorth :cell22 ;
+        :hasSouth :cell24 ;
+        :hasWest :cell13 ;
+        :x "2"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell24
+:cell24 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell34 ;
+        :hasNorth :cell23 ;
+        :hasSouth :cell25 ;
+        :hasWest :cell14 ;
+        :x "2"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell25
+:cell25 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell35 ;
+        :hasNorth :cell24 ;
+        :hasSouth :cell26 ;
+        :hasWest :cell15 ;
+        :x "2"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell26
+:cell26 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell36 ;
+        :hasNorth :cell25 ;
+        :hasSouth :cell27 ;
+        :hasWest :cell16 ;
+        :x "2"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell27
+:cell27 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellCavalier ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell37 ;
+        :hasNorth :cell26 ;
+        :hasSouth :wall ;
+        :hasWest :cell17 ;
+        :x "2"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell30
+:cell30 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellReine ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell40 ;
+        :hasNorth :wall ;
+        :hasSouth :cell31 ;
+        :hasWest :cell20 ;
+        :x "3"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell31
+:cell31 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell41 ;
+        :hasNorth :cell30 ;
+        :hasSouth :cell32 ;
+        :hasWest :cell21 ;
+        :x "3"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell32
+:cell32 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell42 ;
+        :hasNorth :cell31 ;
+        :hasSouth :cell33 ;
+        :hasWest :cell22 ;
+        :x "3"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell33
+:cell33 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell43 ;
+        :hasNorth :cell32 ;
+        :hasSouth :cell34 ;
+        :hasWest :cell23 ;
+        :x "3"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell34
+:cell34 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell44 ;
+        :hasNorth :cell33 ;
+        :hasSouth :cell35 ;
+        :hasWest :cell24 ;
+        :x "3"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell35
+:cell35 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell45 ;
+        :hasNorth :cell34 ;
+        :hasSouth :cell36 ;
+        :hasWest :cell25 ;
+        :x "3"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell36
+:cell36 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell46 ;
+        :hasNorth :cell35 ;
+        :hasSouth :cell37 ;
+        :hasWest :cell26 ;
+        :x "3"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell37
+:cell37 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellReine ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell47 ;
+        :hasNorth :cell36 ;
+        :hasSouth :wall ;
+        :hasWest :cell27 ;
+        :x "3"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell40
+:cell40 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellRoi ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN
+        :hasEast :cell50 ;
+        :hasNorth :wall ;
+        :hasSouth :cell41 ;
+        :hasWest :cell30 ;
+        :x "4"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell41
+:cell41 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell51 ;
+        :hasNorth :cell40 ;
+        :hasSouth :cell42 ;
+        :hasWest :cell31 ;
+        :x "4"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell42
+:cell42 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell52 ;
+        :hasNorth :cell41 ;
+        :hasSouth :cell43 ;
+        :hasWest :cell32 ;
+        :x "4"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell43
+:cell43 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell53 ;
+        :hasNorth :cell42 ;
+        :hasSouth :cell44 ;
+        :hasWest :cell33 ;
+        :x "4"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell44
+:cell44 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell54 ;
+        :hasNorth :cell43 ;
+        :hasSouth :cell45 ;
+        :hasWest :cell34 ;
+        :x "4"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell45
+:cell45 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell55 ;
+        :hasNorth :cell44 ;
+        :hasSouth :cell46 ;
+        :hasWest :cell35 ;
+        :x "4"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell46
+:cell46 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell56 ;
+        :hasNorth :cell45 ;
+        :hasSouth :cell47 ;
+        :hasWest :cell36 ;
+        :x "4"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell47
+:cell47 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellRoi ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell57 ;
+        :hasNorth :cell46 ;
+        :hasSouth :wall ;
+        :hasWest :cell37 ;
+        :x "4"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell50
+:cell50 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellFou ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell60 ;
+        :hasNorth :wall ;
+        :hasSouth :cell51 ;
+        :hasWest :cell40 ;
+        :x "5"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell51
+:cell51 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell61 ;
+        :hasNorth :cell50 ;
+        :hasSouth :cell52 ;
+        :hasWest :cell41 ;
+        :x "5"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell52
+:cell52 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell62 ;
+        :hasNorth :cell51 ;
+        :hasSouth :cell53 ;
+        :hasWest :cell42 ;
+        :x "5"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell53
+:cell53 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell63 ;
+        :hasNorth :cell52 ;
+        :hasSouth :cell54 ;
+        :hasWest :cell43 ;
+        :x "5"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell54
+:cell54 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell64 ;
+        :hasNorth :cell53 ;
+        :hasSouth :cell55 ;
+        :hasWest :cell44 ;
+        :x "5"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell55
+:cell55 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell65 ;
+        :hasNorth :cell54 ;
+        :hasSouth :cell56 ;
+        :hasWest :cell45 ;
+        :x "5"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell56
+:cell56 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell66 ;
+        :hasNorth :cell55 ;
+        :hasSouth :cell57 ;
+        :hasWest :cell46 ;
+        :x "5"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell57
+:cell57 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellFou ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB
+        :hasEast :cell67 ;
+        :hasNorth :cell56 ;
+        :hasSouth :wall ;
+        :hasWest :cell47 ;
+        :x "5"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell60
+:cell60 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellCavalier ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell70 ;
+        :hasNorth :wall ;
+        :hasSouth :cell61 ;
+        :hasWest :cell50 ;
+        :x "6"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell61
+:cell61 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :cell71 ;
+        :hasNorth :cell60 ;
+        :hasSouth :cell62 ;
+        :hasWest :cell51 ;
+        :x "6"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell62
+:cell62 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell72 ;
+        :hasNorth :cell61 ;
+        :hasSouth :cell63 ;
+        :hasWest :cell52 ;
+        :x "6"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell63
+:cell63 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell73 ;
+        :hasNorth :cell62 ;
+        :hasSouth :cell64 ;
+        :hasWest :cell53 ;
+        :x "6"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell64
+:cell64 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell74 ;
+        :hasNorth :cell63 ;
+        :hasSouth :cell65 ;
+        :hasWest :cell54 ;
+        :x "6"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell65
+:cell65 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :cell75 ;
+        :hasNorth :cell64 ;
+        :hasSouth :cell66 ;
+        :hasWest :cell55 ;
+        :x "6"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell66
+:cell66 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell76 ;
+        :hasNorth :cell65 ;
+        :hasSouth :cell67 ;
+        :hasWest :cell56 ;
+        :x "6"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell67
+:cell67 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellCavalier ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :cell77 ;
+        :hasNorth :cell66 ;
+        :hasSouth :wall ;
+        :hasWest :cell57 ;
+        :x "6"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell70
+:cell70 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellTour ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :wall ;
+        :hasNorth :wall ;
+        :hasSouth :cell71 ;
+        :hasWest :cell60 ;
+        :x "7"^^xsd:int ;
+        :y "0"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell71
+:cell71 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceN ;
+        :hasEast :wall ;
+        :hasNorth :cell70 ;
+        :hasSouth :cell72 ;
+        :hasWest :cell61 ;
+        :x "7"^^xsd:int ;
+        :y "1"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell72
+:cell72 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :wall ;
+        :hasNorth :cell71 ;
+        :hasSouth :cell73 ;
+        :hasWest :cell62 ;
+        :x "7"^^xsd:int ;
+        :y "2"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell73
+:cell73 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :wall ;
+        :hasNorth :cell72 ;
+        :hasSouth :cell74 ;
+        :hasWest :cell63 ;
+        :x "7"^^xsd:int ;
+        :y "3"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell74
+:cell74 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :wall ;
+        :hasNorth :cell73 ;
+        :hasSouth :cell75 ;
+        :hasWest :cell64 ;
+        :x "7"^^xsd:int ;
+        :y "4"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell75
+:cell75 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        :hasEast :wall ;
+        :hasNorth :cell74 ;
+        :hasSouth :cell76 ;
+        :hasWest :cell65 ;
+        :x "7"^^xsd:int ;
+        :y "5"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell76
+:cell76 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPion ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :wall ;
+        :hasNorth :cell75 ;
+        :hasSouth :cell77 ;
+        :hasWest :cell66 ;
+        :x "7"^^xsd:int ;
+        :y "6"^^xsd:int .
+
+
+###  http://www.semanticweb.org/21307264/snowman#cell77
+:cell77 rdf:type owl:NamedIndividual ,
+                 :Cell ;
+        rdf:type owl:NamedIndividual ,
+                 :CellTour ;
+        rdf:type owl:NamedIndividual ,
+                 :CellPieceB ;
+        :hasEast :wall ;
+        :hasNorth :cell76 ;
+        :hasSouth :wall ;
+        :hasWest :cell67 ;
+        :x "7"^^xsd:int ;
+        :y "7"^^xsd:int .
+
+
+
+
+
+###  http://www.semanticweb.org/21307264/snowman#wall
+:wall rdf:type owl:NamedIndividual ,
+               :Cell .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+

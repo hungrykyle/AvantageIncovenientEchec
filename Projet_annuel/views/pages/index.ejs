@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snowman</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+	
+	<style type="text/css">
+		.main.container{
+			margin-top: 7em;
+			width: 50%;
+		}
+.parent {
+width: 100%;
+display: grid;
+grid-template-columns: repeat(8, 12%);
+grid-template-rows: repeat(8, 70px);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+border-style: solid;
+border-width: 1px;
+}
+.parent>div{
+	border-style: solid;
+	border-width: 1px;
+	text-align:center;
+	display: table-cell;
+	vertical-align: middle;
+}
+#info{
+	display : block;
+	float:right;
+	min-width: 40%;
+}
+#noir{
+	display : block;
+}
+#blanc{
+	display : block;
+}
+.cimeContent{
+	border-width: 1px;
+	border-style: solid;
+	height: 100px;
+	margin: 10px;
+}
+.cimeContent>div{
+	width: 70px;
+	height: 70px;
+	text-align:center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+img{
+	height: 100%;
+}
+
+
+.div00 { grid-area: 1 / 1 / 2 / 2; }
+.div10 { grid-area: 1 / 2 / 2 / 3; }
+.div20 { grid-area: 1 / 3 / 2 / 4; }
+.div30 { grid-area: 1 / 4 / 2 / 5; }
+.div40 { grid-area: 1 / 5 / 2 / 6; }
+.div50 { grid-area: 1 / 6 / 2 / 7; }
+.div60 { grid-area: 1 / 7 / 2 / 8; }
+.div70 { grid-area: 1 / 8 / 2 / 9; }
+.div80 { grid-area: 1 / 9 / 2 / 10; }
+.div90 { grid-area: 1 / 10 / 2 / 11; }
+.div01 { grid-area: 2 / 1 / 3 / 2; }
+.div11 { grid-area: 2 / 2 / 3 / 3; }
+.div21 { grid-area: 2 / 3 / 3 / 4; }
+.div31 { grid-area: 2 / 4 / 3 / 5; }
+.div41 { grid-area: 2 / 5 / 3 / 6; }
+.div51 { grid-area: 2 / 6 / 3 / 7; }
+.div61 { grid-area: 2 / 7 / 3 / 8; }
+.div71 { grid-area: 2 / 8 / 3 / 9; }
+.div81 { grid-area: 2 / 9 / 3 / 10; }
+.div91 { grid-area: 2 / 10 / 3 / 11; }
+.div02 { grid-area: 3 / 1 / 4 / 2; }
+.div12 { grid-area: 3 / 2 / 4 / 3; }
+.div22 { grid-area: 3 / 3 / 4 / 4; }
+.div32 { grid-area: 3 / 4 / 4 / 5; }
+.div42 { grid-area: 3 / 5 / 4 / 6; }
+.div52 { grid-area: 3 / 6 / 4 / 7; }
+.div62 { grid-area: 3 / 7 / 4 / 8; }
+.div72 { grid-area: 3 / 8 / 4 / 9; }
+.div82 { grid-area: 3 / 9 / 4 / 10; }
+.div92 { grid-area: 3 / 10 / 4 / 11; }
+.div03 { grid-area: 4 / 1 / 5 / 2; }
+.div13 { grid-area: 4 / 2 / 5 / 3; }
+.div23 { grid-area: 4 / 3 / 5 / 4; }
+.div33 { grid-area: 4 / 4 / 5 / 5; }
+.div43 { grid-area: 4 / 5 / 5 / 6; }
+.div53 { grid-area: 4 / 6 / 5 / 7; }
+.div63 { grid-area: 4 / 7 / 5 / 8; }
+.div73 { grid-area: 4 / 8 / 5 / 9; }
+.div83 { grid-area: 4 / 9 / 5 / 10; }
+.div93 { grid-area: 4 / 10 / 5 / 11; }
+.div04 { grid-area: 5 / 1 / 6 / 2; }
+.div14 { grid-area: 5 / 2 / 6 / 3; }
+.div24 { grid-area: 5 / 3 / 6 / 4; }
+.div34 { grid-area: 5 / 4 / 6 / 5; }
+.div44 { grid-area: 5 / 5 / 6 / 6; }
+.div54 { grid-area: 5 / 6 / 6 / 7; }
+.div64 { grid-area: 5 / 7 / 6 / 8; }
+.div74 { grid-area: 5 / 8 / 6 / 9; }
+.div84 { grid-area: 5 / 9 / 6 / 10; }
+.div94 { grid-area: 5 / 10 / 6 / 11; }
+.div05 { grid-area: 6 / 1 / 7 / 2; }
+.div15 { grid-area: 6 / 2 / 7 / 3; }
+.div25 { grid-area: 6 / 3 / 7 / 4; }
+.div35 { grid-area: 6 / 4 / 7 / 5; }
+.div45 { grid-area: 6 / 5 / 7 / 6; }
+.div55 { grid-area: 6 / 6 / 7 / 7; }
+.div65 { grid-area: 6 / 7 / 7 / 8; }
+.div75 { grid-area: 6 / 8 / 7 / 9; }
+.div85 { grid-area: 6 / 9 / 7 / 10; }
+.div95 { grid-area: 6 / 10 / 7 / 11; }
+.div06 { grid-area: 7 / 1 / 8 / 2; }
+.div16 { grid-area: 7 / 2 / 8 / 3; }
+.div26 { grid-area: 7 / 3 / 8 / 4; }
+.div36 { grid-area: 7 / 4 / 8 / 5; }
+.div46 { grid-area: 7 / 5 / 8 / 6; }
+.div56 { grid-area: 7 / 6 / 8 / 7; }
+.div66 { grid-area: 7 / 7 / 8 / 8; }
+.div76 { grid-area: 7 / 8 / 8 / 9; }
+.div86 { grid-area: 7 / 9 / 8 / 10; }
+.div96 { grid-area: 7 / 10 / 8 / 11; }
+.div07 { grid-area: 8 / 1 / 9 / 2; }
+.div17 { grid-area: 8 / 2 / 9 / 3; }
+.div27 { grid-area: 8 / 3 / 9 / 4; }
+.div37 { grid-area: 8 / 4 / 9 / 5; }
+.div47 { grid-area: 8 / 5 / 9 / 6; }
+.div57 { grid-area: 8 / 6 / 9 / 7; }
+.div67 { grid-area: 8 / 7 / 9 / 8; }
+.div77 { grid-area: 8 / 8 / 9 / 9; }
+.div87 { grid-area: 8 / 9 / 9 / 10; }
+.div97 { grid-area: 8 / 10 / 9 / 11; }
+.div08 { grid-area: 9 / 1 / 10 / 2; }
+.div18 { grid-area: 9 / 2 / 10 / 3; }
+.div28 { grid-area: 9 / 3 / 10 / 4; }
+.div38 { grid-area: 9 / 4 / 10 / 5; }
+.div48 { grid-area: 9 / 5 / 10 / 6; }
+.div58 { grid-area: 9 / 6 / 10 / 7; }
+.div68 { grid-area: 9 / 7 / 10 / 8; }
+.div78 { grid-area: 9 / 8 / 10 / 9; }
+.div88 { grid-area: 9 / 9 / 10 / 10; }
+.div98 { grid-area: 9 / 10 / 10 / 11; }
+.div09 { grid-area: 10 / 1 / 11 / 2; }
+.div19 { grid-area: 10 / 2 / 11 / 3; }
+.div29 { grid-area: 10 / 3 / 11 / 4; }
+.div39 { grid-area: 10 / 4 / 11 / 5; }
+.div49 { grid-area: 10 / 5 / 11 / 6; }
+.div59 { grid-area: 10 / 6 / 11 / 7; }
+.div69 { grid-area: 10 / 7 / 11 / 8; }
+.div79 { grid-area: 10 / 8 / 11 / 9; }
+.div89 { grid-area: 10 / 9 / 11 / 10; }
+.div99 {grid-area: 10 / 10 / 11 / 11; }
+
+#plateau{
+	float: left;
+}
+#conteneur{
+	margin-left: 0 !important;
+	position:fixed;
+}
+	</style>
+
+</head>
+<body>
+
+	<%
+	let translate = function(id){
+		id = id+'';
+		id = id.split(",");
+		let retour ="";
+		id.forEach(function(d){
+			let split = d.split("");
+			let colonne = split[0];
+			let ligne = split[1];
+			let colonnePlateau = parseInt(colonne)+1;
+			let lignePlateau;
+			if(ligne == "0"){
+				lignePlateau="A";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne =="1"){
+				lignePlateau="B";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne =="2"){
+				lignePlateau="C";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne=="3"){
+				lignePlateau="D";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne =="4"){
+				lignePlateau="E";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne == "5"){
+				lignePlateau="F";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne=="6"){
+				lignePlateau="G";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+			else if(ligne=="7"){
+				lignePlateau = "H";
+				retour = retour+","+lignePlateau+colonnePlateau;
+			}
+		})
+
+		return retour.substring(1);
+		
+	}
+
+	%>
+<div class ="ui fixed inverted menu">
+	<a href="/" class="header item">Accueil</a>
+</div>
+
+<div id="conteneur" class="ui main container" class="ui segment">
+	<div id="plateau">
+	<div class="ui top attached tabular menu">
+		<div class="active item">Snowman</div>	
+	</div>
+	<div class="ui bottom attached active tab segment">	
+		
+		<div class="cimeContent">
+			Cimetière Noir
+			<% 
+				test.forEach(function(d){
+
+					if(d.key== "http://www.semanticweb.org/21307264/snowman#cimeNoir"){
+						var nbCimeNoir=0;
+						d.value.forEach(function(p){
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellPion")){
+								nbCimeNoir = nbCimeNoir+1;
+								%><div class="cimeNoir <%= nbCimeNoir %> dropper"><img draggable="true" class="chess pawn dropper" src="pionN.png"></div><%
+							}
+							if( p.includes("http://www.semanticweb.org/21307264/snowman#CellTour")){
+								%><div class="cimeNoir dropper"><img draggable="true" class="chess rook dropper" src="tourN.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellFou")){
+								%><div class="cimeNoir dropper"><img draggable="true" class="chess bishop dropper" src="fouN.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellCavalier")){
+								%><div class="cimeNoir dropper"><img draggable="true" class="chess knight dropper" src="cavalierN.png">/div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellReine")){
+								%><div class="cimeNoir dropper"><img draggable="true" class="chess queen dropper" src="reineN.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellRoi")){
+								%><div class="cimeNoir dropper"><img draggable="true" class="chess king dropper" src="roiN.png"></div><%
+							}
+						});
+						for(var i = 0; i< 18-nbCimeNoir; i++){
+							%><div class="cimeNoir <%= i+1 %> dropper"></div><%
+						}
+					}
+			});
+
+			%>
+		</div>	
+
+		<div class="parent">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div class="div80">A</div>
+			<div class="div81">B</div>
+			<div class="div82">C</div>
+			<div class="div83">D</div>
+			<div class="div84">E</div>
+			<div class="div85">F</div>
+			<div class="div86">G</div>
+			<div class="div87">H</div>
+			<% 
+			var maMap = new Map();
+			test.forEach(function(d){ 
+				var k = d.value.length
+				
+				let couleur = "";
+				if(d.key.includes("http://www.semanticweb.org/21307264/snowman#cell")){
+					var secondeMap = new Map();
+					if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB") ){
+						secondeMap.set("Couleur","Blanc");
+					}
+					if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceN") ){
+						secondeMap.set("Couleur","Noir");
+					}
+					if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellTour") ){
+						secondeMap.set("Piece", "Tour");
+						maMap.set(d.key.substr(-2), secondeMap);
+						secondeMap.set("menace", []);
+						secondeMap.set("menacePar", []);
+						secondeMap.set("cango", []);
+
+						if(d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB")){
+							%><div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess rook dropper" src="tourB.png"></div> <%
+						}
+						else{
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess rook dropper" src="tourN.png"></div> <%
+						}
+					%>
+						
+						
+
+			<% }
+					else if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellReine") ){
+						secondeMap.set("Piece", "Reine");
+						secondeMap.set("menace", []);
+						secondeMap.set("menacePar", []);
+						secondeMap.set("cango", []);
+						maMap.set(d.key.substr(-2), secondeMap);
+
+
+						if(d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB")){
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess queen dropper" src="reineB.png"></div><%
+						}
+						else{
+							%><div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess queen dropper" src="reineN.png"></div> <%
+						}
+					%>
+						
+
+			<% }
+					else if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellFou") ){
+						secondeMap.set("Piece", "Fou");
+						secondeMap.set("menace", []);
+						secondeMap.set("menacePar", []);
+						secondeMap.set("cango", []);
+						maMap.set(d.key.substr(-2), secondeMap);
+
+						if(d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB")){
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess bishop dropper" src="fouB.png"></div><%
+						}
+						else{
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess bishop dropper" src="fouN.png"></div><%
+						}
+					%>
+						
+
+			<% }
+					else if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellRoi") ){
+						secondeMap.set("Piece", "Roi");
+						maMap.set(d.key.substr(-2), secondeMap);
+
+
+						if(d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB")){
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess king dropper" src="roiB.png"></div><%
+						}
+						else{
+							%><div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess king dropper" src="roiN.png"></div> <%
+						}
+					%>
+						
+
+			<% }
+					else if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellCavalier") ){
+						secondeMap.set("Piece", "Cavalier");
+						maMap.set(d.key.substr(-2), secondeMap);
+
+						if(d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB")){
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess knight dropper" src="cavalierB.png"></div><%
+						}
+						else{
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img  id="<%= d.key.substr(-2) %>" draggable="true" class="chess knight dropper" src="cavalierN.png"></div><%
+						}
+					%>
+						
+
+			<% }
+					else if( d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPion") ){
+						secondeMap.set("Piece", "Pion");
+						maMap.set(d.key.substr(-2), secondeMap);
+
+
+						if(d.value.includes("http://www.semanticweb.org/21307264/snowman#CellPieceB")){
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess pawn dropper" src="pionB.png"></div><%
+						}
+						else{
+							%> <div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"><img id="<%= d.key.substr(-2) %>" draggable="true" class="chess pawn dropper" src="pionN.png"></div><%
+						}
+
+					%>
+						
+
+			<% }
+					else{
+					%>
+						<div class="div<%= d.key.substr(-2) %> dropper plateau" id="<%= d.key.substr(-2) %>"></div>
+
+			<% }
+
+		}
+
+
+
+		}); %> 
+		</div> 
+
+		<div class="cimeContent">
+			Cimiètière Blanc
+			<% 
+				
+				test.forEach(function(d){
+
+					if(d.key== "http://www.semanticweb.org/21307264/snowman#cimeBlanc"){
+						var nbCimeBlanc=0;
+						d.value.forEach(function(p){
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellPion")){
+								nbCimeBlanc = nbCimeBlanc+1;
+								%><div class="cimeBlanc dropper"><img draggable="true" class="chess pawn dropper" src="pionB.png"></div><%
+							}
+							if( p.includes("http://www.semanticweb.org/21307264/snowman#CellTour")){
+								%><div class="cimeBlanc dropper"><img draggable="true" class="chess rook dropper" src="tourB.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellFou")){
+								%><div class="cimeBlanc dropper"><img draggable="true" class="chess bishop dropper" src="fouB.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellCavalier")){
+								%><div class="cimeBlanc dropper"><img draggable="true" class="chess knight dropper" src="cavalierB.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellReine")){
+								%><div class="cimeBlanc dropper"><img draggable="true" class="chess queen dropper" src="reineB.png"></div><%
+							}
+							if(p.includes("http://www.semanticweb.org/21307264/snowman#CellRoi")){
+								%><div class="cimeBlanc dropper"><img draggable="true" class="chess king dropper" src="roiB.png"></div><%
+							}
+						});
+						for(var i = 0; i< 18-nbCimeBlanc; i++){
+							%><div class="cimeBlanc dropper"></div><%
+						}
+
+					}
+			});
+
+			%>
+		</div>
+		</div>
+	</div>
+</div>
+		<div  id="info">
+			<h3> Informations </h3>
+			<hr>
+
+			
+				<%
+	
+	menace.forEach(function(d){
+				let valeurs = [];
+				let cle = maMap.get(d.key.substr(-2));
+				
+				d.value.forEach(function(p){
+					if(p.substr(-2) !== "ll"){
+						valeurs.push(p.substr(-2));
+					}
+				});
+				cle.set("menace",valeurs);
+				cle.set("key",d.key.substr(-2));
+				});
+	bloque.forEach(function(d){
+				let valeurs = [];
+				let cle = maMap.get(d.key.substr(-2));
+				
+				d.value.forEach(function(p){
+					if(p.substr(-2) !== "ll"){
+						valeurs.push(p.substr(-2));
+					}
+				});
+				cle.set("bloqu",valeurs);
+				});
+	
+	bloquePar.forEach(function(d){
+		let valeurs = [];
+		let cle = maMap.get(d.key.substr(-2));
+		
+		d.value.forEach(function(p){
+			if(p.substr(-2) !== "ll"){
+				valeurs.push(p.substr(-2));
+			}
+		});
+		cle.set("bloquPar",valeurs);
+		});
+	
+	menacepar.forEach(function(d){
+				let valeurs = [];
+				let cle = maMap.get(d.key.substr(-2));
+				
+				d.value.forEach(function(p){
+					if(p.substr(-2) !== "ll"){
+						valeurs.push(p.substr(-2));
+					}
+				});
+				cle.set("menacePar",valeurs);
+				
+				});	
+	cango.forEach(function(d){
+				let valeurs = [];
+				let ensemble = [];
+				let cellule = d.key.substr(-2);
+				let cle = maMap.get(d.key.substr(-2));
+				d.value.forEach(function(p){
+					if(p.substr(-2) !== "ll"){
+						valeurs.push(p.substr(-2));
+					}
+					
+				});
+				cle.set("cango",valeurs);
+				let menace = cle.get("menace");
+				let bloqu = cle.get("bloqu");
+				let bloquPar = cle.get("bloquPar");
+				if(cle.get("Piece").includes("Tour")){
+					
+					ortho(menace,cle,cellule,d,valeurs,ensemble,bloqu,bloquPar);
+					
+				}
+				if(cle.get("Piece").includes("Fou")){
+					diago(menace,cle,cellule,d,valeurs,ensemble,bloqu,bloquPar);
+				}
+				if(cle.get("Piece").includes("Reine")){
+					ortho(menace,cle,cellule,d,valeurs,ensemble,bloqu,bloquPar);
+					diago(menace,cle,cellule,d,valeurs,ensemble,bloqu,bloquPar);
+				}
+	});
+	let pieceNoir = new Map();
+	let pieceBlanche = new Map();
+	for (var [clé, valeur] of maMap) {
+		
+		if(valeur.get("Couleur")==="Noir"){
+			pieceNoir.set(clé,valeur);
+		}else{
+			pieceBlanche.set(clé,valeur);
+		}
+		
+	}
+	let message = "";	
+	let menacedirect = {};%>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="menaced">
+		
+	</div>
+	<hr>
+	<select class="ui selection dropdown" id="monselect" onchange="myFunction()">
+		
+		<option value="noir">Pièces noirs</option> 
+		<option value="blanc">Pièces blanches</option>
+	  </select>
+	  <div style="display:none;" id="menu_blanc" class="ui compact menu">
+		<a onclick="affiche('PionBlanc')" class="item">
+			<img class=""  src="pionB.png"></i>
+			Pion
+		  </a>
+		<a onclick="affiche('TourBlanc')" class="item">
+		  <img class=""  src="tourB.png"></i>
+		  Tour
+		</a>
+		<a onclick="affiche('FouBlanc')" class="item">
+			<img class=""  src="fouB.png"></i>
+			Fou
+		  </a>
+		  <a onclick="affiche('CavalierBlanc')" class="item">
+			<img class=""  src="cavalierB.png"></i>
+			Cavalier
+		  </a>
+		  <a onclick="affiche('ReineBlanc')" class="item">
+			<img class=""  src="reineB.png"></i>
+			Reine
+		  </a>
+		  <a onclick="affiche('RoiBlanc')" class="item">
+			<img class=""  src="roiB.png"></i>
+			Roi
+		  </a>
+	  </div>
+
+	  <div style="display:none;" id="menu_noir" class="ui compact menu">
+		<a onclick="affiche('PionNoir')" class="item">
+			<img class=""  src="pionN.png"></i>
+			Pion
+		  </a>
+		<a onclick="affiche('TourNoir')" class="item">
+		  <img class=""  src="tourN.png"></i>
+		  Tour
+		</a>
+		<a onclick="affiche('FouNoir')" class="item">
+			<img class=""  src="fouN.png"></i>
+			Fou
+		  </a>
+		  <a onclick="affiche('CavalierNoir')" class="item">
+			<img class=""  src="cavalierN.png"></i>
+			Cavalier
+		  </a>
+		  <a onclick="affiche('ReineNoir')" class="item">
+			<img class=""  src="reineN.png"></i>
+			Reine
+		  </a>
+		  <a onclick="affiche('RoiNoir')" class="item">
+			<img class=""  src="roiN.png"></i>
+			Roi
+		  </a>
+	  </div>
+	<div style="display:none;" id=noir>
+				<% for (var [clé, valeur] of pieceNoir) {
+					message = "La pièce " + translate(clé) + "(" + valeur.get("Piece") + ")" + " : ";
+					let cango = valeur.get("cango");
+					console.log("cango");
+					console.log(cango);
+					let menace = valeur.get("menace");
+					let menacePar = valeur.get("menacepar");
+					let classe = valeur.get("Piece") + valeur.get("Couleur");
+					%><div style="display:none;" class="<%=classe %>" id=""><%= message %>
+						<hr>
+						<ul><li> Portée de la pièce : <%= translate(cango) %>
+						<li>Pièces menacés par cette pièce : <%= translate(menace) %>
+						<li> Liste des pièces menacant cette pièce : <%= translate(menacePar) %><%
+					
+					if(valeur.get("Piece") === "Tour"){
+						affichageTour(valeur);
+						
+						
+					}else if(valeur.get("Piece") === "Fou"){
+						affichageFou(valeur);
+					}else if(valeur.get("Piece") === "Reine"){
+						affichageTour(valeur);
+						affichageFou(valeur);
+					}else{
+						menacedirect[valeur.get("key")] = menace;
+														}
+					%></ul></div><%
+				}
+				%>
+			</div> 
+			<div style="display:none;" id=blanc>
+
+				<% for (var [clé, valeur] of pieceBlanche) {
+					message = "La pièce " + translate(clé) + "(" + valeur.get("Piece") + ")" + " : ";
+					let cango = valeur.get("cango");
+					let menace = valeur.get("menace");
+					let menacePar = valeur.get("menacepar");
+					let classe = valeur.get("Piece") + valeur.get("Couleur");
+					%><div style="display:none;" class="<%=classe %>" id=""><%= message %>
+						<hr>
+					<ul><li> Portée de la pièce : <%= translate(cango) %>
+						<li>Pièces menacés par cette pièce : <%= translate(menace) %>
+						<li> Liste des pièces menacant cette pièce : <%= translate(menacePar) %><%
+					
+						if(valeur.get("Piece") === "Tour"){
+							affichageTour(valeur);
+							
+							
+						}else if(valeur.get("Piece") === "Fou"){
+							affichageFou(valeur);
+						}else if(valeur.get("Piece") === "Reine"){
+							affichageTour(valeur);
+							affichageFou(valeur);
+						}else{
+							menacedirect[valeur.get("key")] = menace;
+															}
+					%></ul></div><%
+				}
+				%>
+				</div> 
+			<%
+			
+				function ortho(menace,cle,cellule,d,valeurs,ensemble,bloque,bloquPar){
+					let firstNorth = "";
+					let firstSouth = "";
+					let firstWest = "";
+					let firstEast = "";
+					let obstacles = [];
+					let obstacles_allies = [];
+					let keynorth = cellule.substr(0,cellule.length-1);
+					for (let index = d.key.substr(-1); index >= 0; index--) {
+						
+						if(menace.includes(keynorth + index)){
+							
+							firstNorth = keynorth + index;
+							ensemble.push(firstNorth);
+							obstacles.push(firstNorth);
+						}
+						if(bloquPar.includes(keynorth + index)){
+							firstNorth = keynorth + index;
+							obstacles_allies.push(firstNorth);
+							obstacles.push(firstNorth);
+						}
+						
+					}
+					
+					cle.set("obstacles_alliesNorth",obstacles_allies);
+					cle.set("obstaclesNorth",obstacles);
+					cle.set("firstNorth",ensemble);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+					for (let index = d.key.substr(-1); index < 8; index++) {
+						
+						if(menace.includes(keynorth + index)){
+							
+							firstSouth = keynorth + index;
+							ensemble.push(firstSouth);
+							obstacles.push(firstSouth);
+						}
+						if(bloquPar.includes(keynorth + index)){
+							
+							firstSouth = keynorth + index;
+							obstacles_allies.push(firstSouth);
+							obstacles.push(firstSouth);
+						}
+						
+					}
+					cle.set("obstacles_alliesSouth",obstacles_allies);
+					cle.set("obstaclesSouth",obstacles);
+					cle.set("firstSouth",ensemble);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+					for (let index = keynorth; index >= 0; index--) {
+						
+						if(menace.includes(index + d.key.substr(-1))){
+							
+							firstWest = index + d.key.substr(-1);
+							ensemble.push(firstWest);
+							obstacles.push(firstWest);
+						}
+						if(bloquPar.includes(index + d.key.substr(-1))){
+							
+							firstWest = index + d.key.substr(-1);
+							obstacles_allies.push(firstWest);
+							obstacles.push(firstWest);
+						}
+						
+					}
+					cle.set("obstacles_alliesWest",obstacles_allies);
+					cle.set("obstaclesWest",obstacles);
+					cle.set("firstWest",ensemble);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+					for (let index = keynorth; index < 8; index++) {
+						
+						if(menace.includes(index + d.key.substr(-1))){
+							
+							firstEast = index + d.key.substr(-1);
+							ensemble.push(firstEast);
+							obstacles.push(firstEast);
+						}
+						if(bloquPar.includes(index + d.key.substr(-1))){
+							
+							firstEast = index + d.key.substr(-1);
+							obstacles_allies.push(firstEast);
+							obstacles.push(firstEast);
+						}
+						
+					}
+					cle.set("obstacles_alliesEast",obstacles_allies);
+					cle.set("obstaclesEast",obstacles);
+					cle.set("firstEast",ensemble);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+				}
+				function diago(menace,cle,cellule,d,valeurs,ensemble,bloque,bloquPar){
+					let firstNorthWest = "";
+					let firstSouthEast = "";
+					let firstSouthWest = "";
+					let firstNorthEast = "";
+
+					let obstacles = [];
+					let obstacles_allies = [];
+					let index = d.key.substr(-2);
+					ensemble = [];
+					let northwest = index;
+					while (northwest >= 0) {
+						let res = "";
+						if (northwest < 10){
+							res = "0" + northwest;
+						}else{
+							res = northwest.toString();
+						}
+						
+						if(cle.get("menace").includes(res)){
+							firstNorthWest = res;
+							ensemble.push(firstNorthWest);
+							obstacles.push(firstNorthWest);
+						}
+						if(cle.get("bloquPar").includes(res)){
+							firstNorthWest = res;
+							obstacles.push(firstNorthWest);
+							obstacles_allies.push(firstNorthWest);
+						}
+						northwest = northwest -11;
+					}
+					cle.set("firstNorthWest",ensemble);
+					cle.set("obstacles_alliesNorthWest",obstacles_allies);
+					cle.set("obstaclesNorthWest",obstacles);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+					let southwest = index;
+					while (southwest >= 0) {
+						let res = "";
+						if (southwest < 10){
+							res = "0" + southwest;
+						}else{
+							res = southwest.toString();
+						}
+						if(cle.get("menace").includes(res)){
+							firstSouthWest = res;
+							ensemble.push(firstSouthWest);
+							obstacles.push(firstSouthWest);
+						}
+						if(cle.get("bloquPar").includes(res)){
+							firstSouthWest = res;
+							obstacles.push(firstSouthWest);
+							obstacles_allies.push(firstSouthWest);
+						}
+						southwest = southwest -9;
+					}
+					cle.set("firstSouthWest",ensemble);
+					cle.set("obstacles_alliesSouthWest",obstacles_allies);
+					cle.set("obstaclesSouthWest",obstacles);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+					let northeast = index;
+					while (northeast < 78) {
+						let res = "";
+						if (northeast < 10){
+							res = "0" + northeast;
+						}else{
+							res = northeast.toString();
+						}
+						if(cle.get("menace").includes(res)){
+							firstNorthEast = res;
+							ensemble.push(firstNorthEast);
+							obstacles.push(firstNorthEast);
+						}
+						if(cle.get("bloquPar").includes(res)){
+							firstNorthEast = res;
+							obstacles.push(firstNorthEast);
+							obstacles_allies.push(firstNorthEast);
+						}
+						northeast = parseInt(northeast) + 9;
+					}
+					cle.set("firstNorthEast",ensemble);
+					cle.set("obstacles_alliesNorthEast",obstacles_allies);
+					cle.set("obstaclesNorthEast",obstacles);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+					let southeast = index;
+					while (southeast < 78) {
+						let res = "";
+						if (southeast < 10){
+							res = "0" + southeast;
+						}else{
+							res = southeast.toString();
+						}
+						if(cle.get("menace").includes(res)){
+							firstSouthEast = res;
+							ensemble.push(firstSouthEast);
+							obstacles.push(firstSouthEast);
+						}
+						if(cle.get("bloquPar").includes(res)){
+							firstSouthEast = res;
+							obstacles.push(firstSouthEast);
+							obstacles_allies.push(firstSouthEast);
+						}
+						southeast = parseInt(southeast) + 11;
+						
+					}
+					cle.set("firstSouthEast",ensemble);
+					cle.set("obstacles_alliesSouthEast",obstacles_allies);
+					cle.set("obstaclesSouthEast",obstacles);
+					ensemble = [];
+					obstacles = [];
+					obstacles_allies = [];
+				}
+				function affichageFou(valeur){
+						let northeast = valeur.get("firstNorthEast");
+						let northeast_obstacles = valeur.get("obstaclesNorthEast");
+						let northeast_obstacles_allies = valeur.get("obstacles_alliesNorthEast");
+						let northwest = valeur.get("firstNorthWest");
+						let northwest_obstacles = valeur.get("obstaclesNorthWest");
+						let northwest_obstacles_allies = valeur.get("obstacles_alliesNorthWest");
+						let southeast = valeur.get("firstSouthEast");
+						let southeast_obstacles = valeur.get("obstaclesSouthEast");
+						let southeast_obstacles_allies = valeur.get("obstacles_alliesSouthEast");
+						let southwest = valeur.get("firstSouthWest");
+						let southwest_obstacles = valeur.get("obstaclesSouthWest");
+						let southwest_obstacles_allies = valeur.get("obstacles_alliesSouthWest");
+						let menacetab = [];
+						if(typeof northeast[0] === 'undefined') {
+							
+							if(typeof northeast_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au nord<%
+							}else{
+								%><li>a une cible allié au nord : <%= translate(northeast_obstacles_allies[0]) %><%
+							}
+						}else{
+							
+							if(northeast[0] === northeast_obstacles[0]){
+								menacetab.push(northeast[0]);
+								%><li>La première pièce rencontré au nord est la pièce adverse : <%= translate(northeast[0]) %><%
+							}else{
+								%><li>La première pièce rencontré au nord est la pièce alliée : <%= translate(northeast_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(typeof northwest[0] === 'undefined') {
+							
+							if(typeof northwest_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au nord ouest<%
+							}else{
+								%><li>a une cible allié au nord ouest : <%= translate(northwest_obstacles_allies[0]) %><%
+							}
+						}else{
+							
+							if(northwest[0] === northwest_obstacles[0]){
+								menacetab.push(northwest[0]);
+								%><li>La première pièce rencontré au nord ouest est la pièce adverse : <%= translate(northwest[0]) %><%
+							}else{
+								%><li>La première pièce rencontré au nord ouest est la pièce alliée : <%= translate(northwest_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(typeof southeast[0] === 'undefined') {
+							
+							if(typeof southeast_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au sud est<%
+							}else{
+								%><li>a une cible allié au sud est : <%= translate(southeast_obstacles_allies[0]) %><%
+							}
+						}else{
+							
+							if(southeast[0] === southeast_obstacles[0]){
+								menacetab.push(southeast[0]);
+								%><li>La première pièce rencontré au sud est est la pièce adverse : <%= translate(southeast[0]) %><%
+							}else{
+								%><li>La première pièce rencontré au sud est est la pièce alliée : <%= translate(southeast_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(typeof southwest[0] === 'undefined') {
+							
+							if(typeof southwest_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au sud ouest<%
+							}else{
+								%><li>a une cible allié au sud ouest : <%= translate(southwest_obstacles_allies[0]) %><%
+							}
+						}else{
+							
+							if(southwest[0] === southwest_obstacles[0]){
+								menacetab.push(southwest[0]);
+								%><li>La première pièce rencontré au sud ouest et la pièce adverse : <%= translate(southwest[0]) %><%
+							}else{
+								%><li>La première pièce rencontré au sud ouest et la pièce alliée : <%= translate(southwest_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(menacetab.length > 0){
+							menacedirect[valeur.get("key")] = menacetab;
+						}
+				}
+				function affichageTour(valeur){
+						let north = valeur.get("firstNorth");
+						let north_obstacles = valeur.get("obstaclesNorth");
+						let north_obstacles_allies = valeur.get("obstacles_alliesNorth");
+						let west = valeur.get("firstWest");
+						let west_obstacles = valeur.get("obstaclesWest");
+						let west_obstacles_allies = valeur.get("obstacles_alliesWest");
+						let east = valeur.get("firstEast");
+						let east_obstacles = valeur.get("obstaclesEast");
+						let east_obstacles_allies = valeur.get("obstacles_alliesEast");
+						let south = valeur.get("firstSouth");
+						let south_obstacles = valeur.get("obstaclesSouth");
+						let south_obstacles_allies = valeur.get("obstacles_alliesSouth");
+						let menacetab = [];
+						if(typeof north[0] === 'undefined') {
+							
+							if(typeof north_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au nord<%
+							}else{
+								%><li>a une cible allié au nord : <%= transate(north_obstacles_allies[0]) %><%
+							}
+						}else{
+							
+							if(north[0] === north_obstacles[0]){
+								menacetab.push(north[0]);
+								%><li>La première pièce rencontré au nord et la pièce adverse : <%= translate(north[0]) %><%
+							}else{
+								%><li>La première pièce rencontré au nord et la pièce alliée : <%= translate(north_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(typeof west[0] === 'undefined') {
+							
+							if(typeof west_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au l'ouest<%
+							}else{
+								%><li>a une cible allié à l'ouest : <%= translate(west_obstacles_allies[0]) %><%
+							}
+						}else{
+							if(west[0] === west_obstacles[0]){
+								menacetab.push(west[0]);
+								%><li>La première pièce rencontré à l'ouest et la pièce adverse : <%= translate(west[0]) %><%
+							}else{
+								%><li>La première pièce rencontré à l'ouest et la pièce alliée : <%= translate(west_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(typeof east[0] === 'undefined') {
+							
+							if(typeof east_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct à l'est<%
+							}else{
+								%><li>a une cible allié à l'est : <%= translate(east_obstacles_allies[0]) %><%
+							}
+						}else{
+							if(east[0] === east_obstacles[0]){
+								menacetab.push(east[0]);
+								%><li>La première pièce rencontré à l'est et la pièce adverse : <%= translate(east[0]) %><%
+							}else{
+								%><li>La première pièce rencontré à l'est et la pièce alliée : <%= translate(east_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(typeof south[0] === 'undefined') {
+							
+							if(typeof south_obstacles[0] === 'undefined'){
+								%><li>n'a aucune cible direct au sud<%
+							}else{
+								%><li>a une cible allié au sud : <%= translate(south_obstacles_allies[0]) %><%
+							}
+						}else{
+							if(south[0] === south_obstacles[0]){
+								menacetab.push(south[0]);
+								%><li>La première pièce rencontré au sud et la pièce adverse : <%= translate(south[0]) %><%
+							}else{
+								%><li>La première pièce rencontré au sud et la pièce alliée : <%= translate(south_obstacles_allies[0]) %><%
+							
+							}
+							
+						}
+						if(menacetab.length > 0){
+							menacedirect[valeur.get("key")] = menacetab;
+						}
+						
+				}
+			
+				let object = {};
+				let tableau = {};
+				maMap.forEach((petitemap, petitemapkey) => {
+					petitemap.forEach((value, key) => {
+						var keys = key.split('.'),
+							last = keys.pop();
+						keys.reduce((r, a) => r[a] = r[a] || {}, object)[last] = value;
+						tableau[petitemapkey]=object;
+					});
+				});
+			%>
+			
+		</div></div>
+	
+</body>
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("monselect").value;
+	  if (x === "noir") {
+		  document.getElementById("noir").style.display = "block";
+		  document.getElementById("menu_noir").style.display = "";
+		  document.getElementById("menu_blanc").style.display = "none";
+		  document.getElementById("blanc").style.display = "none";
+	  }
+	  if (x === "blanc"){
+		document.getElementById("menu_noir").style.display = "none";
+		document.getElementById("menu_blanc").style.display = "";
+		document.getElementById("blanc").style.display = "block";
+		document.getElementById("noir").style.display = "none";
+	  }
+	}
+	
+	let lastprint = "";
+	
+	var tableau_données = <%- JSON.stringify(tableau) %>;
+
+	var menacedirect = <%- JSON.stringify(menacedirect) %>;
+
+	let keysmenace = Object.keys(menacedirect);
+	let cmpt = 0;
+	let h3 = document.createElement("h3");
+	h3.innerText = "Pièces directement menacées";
+	document.getElementById("menaced").appendChild(h3);
+	Object.values(menacedirect).forEach(element => {
+		let attaquantsrc = document.getElementById(keysmenace[cmpt]).firstChild.src;
+		
+		element.forEach(id => {
+			document.getElementById(id).style.backgroundColor = "red";
+			
+			let victimesrc = document.getElementById(id).firstChild.src;
+			let div = document.createElement("div");
+			
+			let attaquant = document.createElement("img");
+			attaquant.src = attaquantsrc;
+			attaquant.style.width = "100px";
+			attaquant.style.height = "100px";
+			let victime = document.createElement("img");
+			victime.src = victimesrc;
+			victime.style.width = "100px";
+			victime.style.height = "100px";
+			let arrow = document.createElement("img");
+			arrow.src = "arrow.png";
+			arrow.style.width = "100px";
+			arrow.style.height = "100px";
+			
+			div.appendChild(attaquant);
+			div.appendChild(arrow);
+			div.appendChild(victime);
+			document.getElementById("menaced").appendChild(div);
+		});
+		cmpt += 1;
+	});
+	function affiche(div){
+		if(lastprint !== ""){
+			let suppr = document.querySelectorAll("."+lastprint);
+			for (let item of suppr) {
+				item.style.display = "none";
+			}
+		}
+		let list = document.querySelectorAll("."+div);
+		for (let item of list) {
+			item.style.display = "block";
+		}
+		lastprint = div;
+	}
+	</script>
+	<script type="text/javascript">
+		(function() {
+			
+			var fonction = {
+				fromTo: function(from, to){
+					window.location.href="/move?from="+from+"&to="+to+"&cibleFrom="+cibleFrom;
+				}
+			}
+			
+			var moved = "";
+			var cibleFrom ="";
+			document.addEventListener("dragstart", function(event){
+				if(event.target.parentElement.className.includes("plateau")){
+					moved = event.target.id
+					cibleFrom="plateau";
+				}
+				else if(event.target.parentElement.className.includes("cimeBlanc")){
+					cibleFrom="cimeBlanc";
+					moved = event.target.className;
+					moved = event.target.className.split(" ")[1];
+				}
+				else{
+					cibleFrom="cimeNoir";
+					moved = event.target.className;
+					moved = event.target.className.split(" ")[1];
+				}
+			})
+			// By default, data/elements cannot be dropped in other elements. To allow a drop, we must prevent the default handling of the element
+			document.addEventListener("dragover", function(event) {
+				event.preventDefault();
+			});
+
+
+			document.addEventListener("drop", function(event) {
+			  event.preventDefault();
+			  var cible;
+			  if(event.target.tagName =="IMG"){
+			  	cible= event.target.parentElement;
+
+			  }
+			  else{
+			  	cible= event.target;
+			  }
+			  if ( cible.className.includes("dropper") ) {
+			  	var target ="";
+			  	if(cible.className.includes("plateau")){
+			  		target=cible.id;
+			  	}
+			  	else if(cible.className.includes("cimeBlanc")){
+			  		target = "cimeBlanc"
+			  	}
+			  	else{
+			  		target = "cimeNoir";
+			  	}
+			    fonction.fromTo(moved,target);
+			  }
+			});			
+		})();
+
+
+	</script>
+</html>
